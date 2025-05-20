@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import ShoppingCartList from "./ShoppingCartList";
 
 

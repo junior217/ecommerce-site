@@ -1,10 +1,12 @@
 import ProductsList from "../ProductsList";
 
+export const dynamic = 'force-dynamic'; // This will make the page dynamic and not cache it
+
 export default async function ProductsPage() {
   const response = await fetch('process.env.NEXT_PUBLIC_SITE' + '/api/products');
   const products = await response.json();
-  
 
+  
   const response2 = await fetch('process.env.NEXT_PUBLIC_SITE' + '/api/users/2/cart', {
     cache: 'no-cache',
   })
