@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server';
 import { products } from '@/app/product-data';
-import { connectToDB} from '@/app/api/db';
+import { connectToDB } from '@/app/api/db';
 
 type ShoppingCart = Record<string, string[]>;
 
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest, { params }: { params: Params })
 
   const updatedCart = await db.collection('carts').findOneAndUpdate(
     { userId },
-    { $push: { cartIds: { $each: [productId] } } },
+    { $push: { cartIds: productId } },
     { upsert: true, returnDocument: 'after' },
   )
 

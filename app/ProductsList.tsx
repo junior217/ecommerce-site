@@ -9,7 +9,7 @@ export default function ProductsList({ products, initialCartProducts = [] }: { p
   const [cartProducts, setCartProducts] = useState(initialCartProducts)
   
   async function addToCart(productId: string) {
-    const response = await fetch('http://localhost:300/api/users/2/cart', {
+    const response = await fetch('http://localhost:300'+ '/api/users/2/cart', {
       method: 'POST',
       body: JSON.stringify({
         productId,
